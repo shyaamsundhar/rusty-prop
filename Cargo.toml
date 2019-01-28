@@ -1,0 +1,8 @@
+[package]
+name = "rusty-prop"
+version = "0.1.0"
+authors = ["Shyam Sundar B <shyambaskaran@outlook.com>"]
+edition = "2018"
+
+[dependencies]
+chrono = { version = "0.4", features = ["serde"] }
