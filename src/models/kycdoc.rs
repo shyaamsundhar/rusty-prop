@@ -1,5 +1,3 @@
-//mod model_template;
-
 use chrono::prelude::DateTime;
 use chrono::prelude::Local;
 use crate::models::model_template::ModelTemplate;
