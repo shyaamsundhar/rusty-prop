@@ -5,7 +5,7 @@ use crate::models::kycdoc::Kycdoc;
 
 #[derive(Debug)]
 pub struct Person{
-    pub id:u32,
+    pub person_id:u32,
     pub name:String,
     pub dob:Date<Local>,
     pub docs:Vec<Kycdoc>
@@ -20,10 +20,10 @@ impl ModelTemplate for Person{
     }
     fn get(doc_id:u32) -> Self{
         let some_var = Person {
-            id: doc_id, 
+            person_id: doc_id, 
             name:"dummy".to_string(),
             dob: Local::today(), 
-            docs: vec![Kycdoc {id: doc_id, name:"dummy".to_string(), value: Local::now()}] 
+            docs: vec![Kycdoc::get(1)] 
         };
         some_var
     }

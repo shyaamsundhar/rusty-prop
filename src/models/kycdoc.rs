@@ -4,7 +4,7 @@ use crate::models::model_template::ModelTemplate;
 
 #[derive(Debug)]
 pub struct Kycdoc{
-    pub id:u32,
+    pub kyc_id:u32,
     pub name:String,
     pub value:DateTime<Local>
 }
@@ -17,7 +17,7 @@ impl ModelTemplate for Kycdoc{
         true
     }
     fn get(doc_id:u32) -> Self{
-        let some_var = Kycdoc {id: doc_id, name:"dummy".to_string(), value: Local::now()};
+        let some_var = Kycdoc {kyc_id: doc_id, name:"dummy".to_string(), value: Local::now()};
         some_var
     }
 }
