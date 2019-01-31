@@ -1,13 +1,15 @@
-use chrono::prelude::Date;
-use chrono::prelude::Local;
+use chrono::{DateTime, Utc, TimeZone};
+use chrono::serde::ts_seconds;
+
 use crate::models::model_template::ModelTemplate;
 use crate::models::kycdoc::Kycdoc;
 
-#[derive(Debug)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct Person{
     pub person_id:u32,
     pub name:String,
-    pub dob:Date<Local>,
+    #[serde(with = "ts_seconds")]
+    pub dob:DateTime<Utc>,
     pub docs:Vec<Kycdoc>
 }
 
@@ -22,7 +24,7 @@ impl ModelTemplate for Person{
         let some_var = Person {
             person_id: doc_id, 
             name:"dummy".to_string(),
-            dob: Local::today(), 
+            dob: Utc.ymd(1970,1,1).and_hms(0, 0, 0),
             docs: vec![Kycdoc::get(1)] 
         };
         some_var

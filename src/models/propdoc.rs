@@ -3,6 +3,7 @@ use chrono::prelude::Local;
 use crate::models::model_template::ModelTemplate;
 use crate::models::person::Person;
 
+
 //Enum definitions
 pub enum Measurements{
     HectAcre,
@@ -16,6 +17,7 @@ pub enum LandTypes{
 
 //Enum definitions ends here
 
+//
 pub struct Borders{
     pub north:String,
     pub east:String,
